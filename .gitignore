@@ -1,0 +1,7 @@
+__pycache__/*
+lib/*
+logs/*
+tools/__pycache__/*
+tools/alivescan/__pycache__/*
+tools/oneforall/results/*
+tools/portscan/__pycache__/*ools/oneforall/results/*

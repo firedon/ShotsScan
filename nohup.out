@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "subdomain.py", line 1, in <module>
+    from tools.oneforall import oneforall
+  File "/root/infoGather/ShotsScan/tools/oneforall/oneforall.py", line 19, in <module>
+    from tools.oneforall.common import utils, resolve, request
+  File "/root/infoGather/ShotsScan/tools/oneforall/common/request.py", line 4, in <module>
+    import aiohttp
+  File "/usr/local/lib/python3.7/dist-packages/aiohttp/__init__.py", line 6, in <module>
+    from .client import BaseConnector as BaseConnector
+  File "/usr/local/lib/python3.7/dist-packages/aiohttp/client.py", line 69, in <module>
+    from .connector import BaseConnector as BaseConnector
+  File "/usr/local/lib/python3.7/dist-packages/aiohttp/connector.py", line 57, in <module>
+    from .resolver import DefaultResolver
+  File "/usr/local/lib/python3.7/dist-packages/aiohttp/resolver.py", line 11, in <module>
+    import aiodns
+  File "/usr/local/lib/python3.7/dist-packages/aiodns/__init__.py", line 28, in <module>
+    'CAA'   : pycares.QUERY_TYPE_CAA,
+AttributeError: module 'pycares' has no attribute 'QUERY_TYPE_CAA'
