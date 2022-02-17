@@ -21,7 +21,8 @@ def scan(ip, is_scan, subdomain):
             app = PortScan(ip_info['ip'])
             app.run()
             if app.error:
-                raise Exception(app.error)
+                logger.log('ERROR', app.error)
+                #raise Exception(app.error)
             for i in app.data:
                 ip_port_info = app.data.get(i)
                 ip = ip_port_info['ip']
@@ -69,7 +70,7 @@ def run():
                 port_data['project_name'] = project_name
 
                 put_port(port_data)
-                logger.log('INFOR', f'[{subdomain}] {ip} - 扫描完成')
+                logger.log('INFOR', f'[{subdomain}] {port_data} - 扫描完成')
                 #{'code': 1, 'reason': '', 'data': [{'ip': '119.23.87.38', 'port': 80, 'service': 'http', 'product': 'Tengine httpd', 'version': ''}, {'ip': '119.23.87.38', 'port': 81, 'service': 'http', 'product': 'Tengine httpd', 'version': ''}, {'ip': '119.23.87.38', 'port': 83, 'service': 'http', 'product': 'Tengine httpd', 'version': ''}, {'ip': '119.23.87.38', 'port': 84, 'service': 'http', 'product': 'Tengine httpd', 'version': ''}, {'ip': '119.23.87.38', 'port': 9443, 'service': 'http', 'product': 'Tengine httpd', 'version': ''}, {'ip': '119.23.87.38', 'port': 9663, 'service': 'http', 'product': 'nginx', 'version': ''}, {'ip': '119.23.87.38', 'port': 10000, 'service': 'http', 'product': 'Tengine httpd', 'version': ''}, {'ip': '119.23.87.38', 'port': 10001, 'service': 'http', 'product': 'Tengine httpd', 'version': ''}, {'ip': '119.23.87.38', 'port': 28080, 'service': 'http', 'product': 'Tengine httpd', 'version': ''}], 'time': 35, 'domain': 'hestia.huolala.cn'}
             else:
                 logger.log('INFOR', f'[{subdomain}] {ip} {is_scan} - 该IP端口数据已被录入')
